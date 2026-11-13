@@ -1,0 +1,22 @@
+{
+  "name": "postfast",
+  "description": "PostFast lets an AI assistant draft YouTube and TikTok video posts in your PostFast account; you review and press Post in PostFast.",
+  "version": "1.0.0",
+  "author": {
+    "name": "PostFast",
+    "email": "support@postfast.sh"
+  },
+  "homepage": "https://postfast.sh/mcp",
+  "repository": "https://github.com/airdropfi/postfast-cursor-kit",
+  "license": "MIT",
+  "keywords": [
+    "postfast",
+    "postfast mcp",
+    "mcp",
+    "model-context-protocol",
+    "youtube",
+    "tiktok",
+    "video scheduling"
+  ],
+  "logo": "assets/logo.png"
+}

@@ -1,0 +1,25 @@
+---
+description: How to use the PostFast MCP tools: drafts only, user supplies YouTube and TikTok settings, report post states as returned
+alwaysApply: false
+---
+
+# PostFast (draft video posts for your channels)
+
+PostFast (https://postfast.sh) schedules YouTube and TikTok videos (plus Bluesky, WordPress, DEV and Hashnode). These rules apply whenever you use the `postfast` MCP server. Its eight tools are `integrationList`, `groupList`, `integrationSchema`, `triggerTool`, `createDraftPostTool`, `postsListTool`, `postSettingsTool` and `uploadFromUrlTool`.
+
+If the PostFast tools are missing or answer 401 or "unauthorized", tell the user to check that the `POSTFAST_API_KEY` environment variable is set to a key from PostFast Settings, Public API section, and to restart Cursor. You cannot fix this for them.
+
+## Rules that always apply
+
+1. **Drafts only.** `createDraftPostTool` creates a DRAFT on the user's channels. It never publishes or schedules. Never say a post was published or scheduled. After creating a draft, tell the user to open PostFast and press Post now or Add to calendar.
+2. **No deletion.** You cannot delete posts. If asked, say so and point the user to PostFast.
+3. **Channel first.** Call `integrationList` (or `groupList` for customer groups) to find the channel. Call `integrationSchema` for that channel type before building settings, and follow its rules.
+4. **Settings come from the user.** For YouTube (title, privacy public/unlisted/private, made-for-kids) and TikTok (privacy, comments, duet, stitch, commercial-content disclosure) ask the user for each choice that the schema requires. Never guess them and never pick a more public option on their behalf.
+5. **Media.** Use `uploadFromUrlTool` to copy a public image or video URL into the media library, and use the media it returns. Only use URLs the user gave you.
+6. **Report status as returned.** `postsListTool` lists posts between two UTC dates with state, channel and settings. Say exactly what it returned and do not infer states it did not show. Use `postSettingsTool` only to change settings of an unpublished post or draft, as the user asks.
+7. **Honest channels.** Live channels are YouTube, TikTok, Bluesky, WordPress, DEV and Hashnode. Do not offer X, LinkedIn, Instagram, Facebook, Threads, Reddit, Pinterest, Telegram or others.
+8. **Keys stay out of chat.** Never ask the user to paste an API key or token into the conversation. An API key is created by the user in PostFast Settings, in the Public API section.
+
+## Workflow
+
+`integrationList`, `integrationSchema`, ask the user for the required settings, `uploadFromUrlTool` if there is media, show the post, `createDraftPostTool` once, then tell the user to open PostFast and press Post now or Add to calendar. The `draft-a-video-post` skill has the full steps; follow it when it is installed. Status questions: the `check-post-status` skill.

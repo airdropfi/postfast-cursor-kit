@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you refer to this software, please cite it as below."
+type: software
+title: "PostFast kit for Cursor"
+abstract: "PostFast lets an AI assistant draft YouTube and TikTok video posts in your PostFast account; you review and press Post in PostFast."
+authors:
+  - name: "PostFast"
+    website: "https://postfast.sh"
+repository-code: "https://github.com/airdropfi/postfast-cursor-kit"
+url: "https://postfast.sh/mcp"
+license: MIT
+version: 1.0.0
+keywords:
+  - mcp
+  - model-context-protocol
+  - postfast
+  - youtube
+  - tiktok
+  - video-scheduling
+  - cursor

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "postfast": {
+      "type": "http",
+      "url": "https://postfast.sh/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${POSTFAST_API_KEY}"
+      }
+    }
+  }
+}
